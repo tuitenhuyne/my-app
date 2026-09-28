@@ -1,50 +1,104 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #f5f7fa;
+  padding: 40px 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.orchids-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.orchids-container h1 {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 36px;
 }
 
-.box {
-  border: solid 2px;
-  border-color: yellow;
-  padding: 30px 30px;
+.orchids-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
 }
 
-.child-component {
-  border-color: white;
-  margin: 30px 30px;
+.orchid-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.orchid-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.orchid-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.orchid-info {
+  padding: 18px;
+}
+
+.orchid-info h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 21px;
+}
+
+.orchid-info p {
+  margin: 7px 0;
+  color: #555;
+}
+
+.special {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #ffe0e6;
+  color: #d6336c;
+  font-weight: bold;
+}
+
+.app {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  color: #212529;
+  transition: all 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.dark-mode .orchids-container h1 {
+  color: #f8f9fa;
+}
+
+.dark-mode .orchid-card {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+.dark-mode .orchid-info p {
+  color: #dee2e6;
+}
+.dark-mode .App {
+  background-color: #212529;
+  color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.dark-mode .orchids-container {
+  background-color: #212529;
+}
+
+.dark-mode .orchids-container h1 {
+  color: #f8f9fa;
 }
