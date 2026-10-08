@@ -1,7 +1,7 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+/*import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
-/*import BaseEffectHook from './EffectHook/BaseEffectHook';
+import BaseEffectHook from './EffectHook/BaseEffectHook';
 import OnlineStatus from './EffectHook/OnlineStatus';
 import Player from './Player';
 import logo from './logo.svg';
@@ -10,11 +10,12 @@ import Main from './components/Main';
 import Navigation from './components/Navigation';
 import Navigation from './Navigation';
 import Pet from './Pet';*/
-import Orchids from './LAB1-2-3/Orchids';
+/*import Orchids from './LAB1-2-3/Orchids';
 import Navbar from './LAB1-2-3/Navbar';
-import AuthProvider from './LAB1-2-3/AuthProvider';
+import AuthProvider from './LAB1-2-3/AuthProvider';*/
+import Contact from './Contact';
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  /*const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -49,6 +50,11 @@ function App() {
       </div>
     </AuthProvider>
   );
+*/
+return(
+  <div>
+    <Contact />
+  </div>
+  );
 }
-
 export default App;
