@@ -5,8 +5,6 @@ import useAuth from './useAuth';
 function Navbar({ darkMode, toggleTheme }) {
   const { user, login, logout } = useAuth();
 
-
-
   return (
     <nav
       className={`navbar ${
