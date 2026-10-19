@@ -4,6 +4,7 @@ const ListOfOrchids = [
     name: 'Cattleya cernua',
     rating: 5,
     isSpecial: true,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cattleya_cernua_(Lindl.)_Van_den_Berg,_Neodiversity_5_13_(2010)_(31091495627).jpg',
     color: 'Red',
@@ -18,6 +19,7 @@ const ListOfOrchids = [
     name: 'Cattleya labiata',
     rating: 5,
     isSpecial: true,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cattleya_labiata.jpg',
     color: 'Pink',
@@ -32,6 +34,7 @@ const ListOfOrchids = [
     name: 'Cattleya intermedia',
     rating: 4,
     isSpecial: false,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cattleya_intermedia.jpg',
     color: 'White',
@@ -46,6 +49,7 @@ const ListOfOrchids = [
     name: 'Phalaenopsis aphrodite',
     rating: 5,
     isSpecial: true,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Phalaenopsis_aphrodite_%27-180501%27_Rchb.f.,_Hamburger_Garten-_Blumenzeitung_18_35_(1862)_(47706143821).jpg',
     color: 'White',
@@ -60,6 +64,7 @@ const ListOfOrchids = [
     name: 'Phalaenopsis bellina',
     rating: 5,
     isSpecial: true,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Phalaenopsis_bellina_(Rchb.f.)_Christenson,_Brittonia_47_58_(1995)_(48320280212).jpg',
     color: 'Pink and Green',
@@ -74,6 +79,7 @@ const ListOfOrchids = [
     name: 'Phalaenopsis violacea',
     rating: 5,
     isSpecial: true,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Phalaenopsis_violacea_(Sumatra)_H.Witte,_Ann._Hort._Bot._4-_129_(1861)_(35255375441).jpg',
     color: 'Purple',
@@ -88,6 +94,7 @@ const ListOfOrchids = [
     name: 'Phalaenopsis equestris',
     rating: 4,
     isSpecial: false,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Phalaenopsis_equestris_(Schauer)_Rchb.f.,_Linnaea_22-_864_(1850)_(24800985397).jpg',
     color: 'Pink',
@@ -102,6 +109,7 @@ const ListOfOrchids = [
     name: 'Phalaenopsis amboinensis',
     rating: 4,
     isSpecial: false,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Phalaenopsis_amboinensis_Orchi_169.jpg',
     color: 'Yellow',
@@ -116,6 +124,7 @@ const ListOfOrchids = [
     name: 'Dendrobium anosmum',
     rating: 5,
     isSpecial: true,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Dendrobium_anosmum_2zz.jpg',
     color: 'Purple and White',
@@ -130,6 +139,7 @@ const ListOfOrchids = [
     name: 'Dendrobium nobile',
     rating: 5,
     isSpecial: true,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Dendrobium_nobile_1.jpg',
     color: 'White and Purple',
@@ -144,6 +154,7 @@ const ListOfOrchids = [
     name: 'Dendrobium bigibbum',
     rating: 4,
     isSpecial: false,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Orchidee_---_Dendrobium_Bigibbum_(7759687878).jpg',
     color: 'Purple',
@@ -158,6 +169,7 @@ const ListOfOrchids = [
     name: 'Dendrobium chrysotoxum',
     rating: 5,
     isSpecial: true,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Dendrobium_chrysotoxum_Lindl.-_Edwards%27s_Bot._Reg._33-_t._19_(1847)._20220427_094255.jpg',
     color: 'Yellow',
@@ -172,6 +184,7 @@ const ListOfOrchids = [
     name: 'Vanda coerulea',
     rating: 5,
     isSpecial: true,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Vanda_coerulea_(2943608475).jpg',
     color: 'Blue',
@@ -186,6 +199,7 @@ const ListOfOrchids = [
     name: 'Vanda tricolor',
     rating: 4,
     isSpecial: false,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Vanda_tricolor.jpg',
     color: 'Yellow and Purple',
@@ -200,6 +214,7 @@ const ListOfOrchids = [
     name: 'Vanda cristata',
     rating: 4,
     isSpecial: false,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Vanda_cristata.jpg',
     color: 'Green and Yellow',
@@ -214,6 +229,7 @@ const ListOfOrchids = [
     name: 'Vanda dearei',
     rating: 5,
     isSpecial: true,
+    isNatural: true,
     image:
       'https://commons.wikimedia.org/wiki/Special:Redirect/file/Vanda_dearei_Singapore_Botanic_Gardens-_(9252396107)_-_cropped.jpg',
     color: 'Yellow',

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
@@ -30,13 +31,21 @@ function OrchidCard({ orchid }) {
 
         <br />
 
-        <Button
-          variant="primary"
-          className="mt-3"
-          onClick={handleShow}
-        >
-          Detail
-        </Button>
+        <div className="d-flex gap-2 justify-content-center mt-3">
+          <Button
+            variant="outline-primary"
+            onClick={handleShow}
+          >
+            Quick view
+          </Button>
+
+          <Link
+            to={`/detail?id=${orchid.id}`}
+            className="btn btn-primary"
+          >
+            Detail
+          </Link>
+        </div>
       </div>
 
       <Modal show={show} onHide={handleClose}>

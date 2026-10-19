@@ -1,60 +1,77 @@
-import React from 'react';
-import Button from 'react-bootstrap/Button';
-import useAuth from './useAuth';
 
-function Navbar({ darkMode, toggleTheme }) {
+import React from "react";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import useAuth from "./useAuth";
+
+function AppNavbar({ darkMode, toggleTheme }) {
   const { user, login, logout } = useAuth();
 
   return (
-    <nav
-      className={`navbar ${
-        darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'
-      } px-4 py-3`}
+    <Navbar
+      expand="lg"
+      bg={darkMode ? "dark" : "light"}
+      variant={darkMode ? "dark" : "light"}
+      className="px-3 py-3"
     >
-      <div className="container-fluid">
-        <h4 className="mb-0">
+      <Container fluid>
+        <Navbar.Brand as={Link} to="/">
           🌸 Orchid Collection
-        </h4>
+        </Navbar.Brand>
 
-        <div className="d-flex align-items-center gap-2">
-          {user ? (
-            <>
-              <span>
-                Welcome, {user.username}
-              </span>
+        <Navbar.Toggle aria-controls="main-navbar" />
 
-              <Button
-                variant="danger"
-                onClick={logout}
-              >
-                Logout
-              </Button>
-            </>
-          ) : (
-            <>
-              <span>
-                Log in as Huy
-              </span>
+        <Navbar.Collapse id="main-navbar">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/">
+              Home
+            </Nav.Link>
 
-              <Button
-                variant="primary"
-                onClick={login}
-              >
-                Login
-              </Button>
-            </>
-          )}
+            <Nav.Link as={Link} to="/naturals">
+              Naturals
+            </Nav.Link>
 
-          <Button
-            variant={darkMode ? 'light' : 'dark'}
-            onClick={toggleTheme}
-          >
-            {darkMode ? '☀️ Light' : '🌙 Dark'}
-          </Button>
-        </div>
-      </div>
-    </nav>
+            <Nav.Link as={Link} to="/contact">
+              Contact
+            </Nav.Link>
+
+          </Nav>
+
+          <div className="d-flex align-items-center gap-2 flex-wrap mt-3 mt-lg-0">
+            {user ? (
+              <>
+                <span className="me-2">
+                  Welcome, {user.username}
+                </span>
+
+                <Button variant="danger" onClick={logout}>
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <span>Log in as Huy</span>
+
+                <Button variant="primary" onClick={login}>
+                  Login
+                </Button>
+              </>
+            )}
+
+            <Button
+              variant={darkMode ? "light" : "dark"}
+              onClick={toggleTheme}
+            >
+              {darkMode ? "☀️ Light" : "🌙 Dark"}
+            </Button>
+          </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default AppNavbar;

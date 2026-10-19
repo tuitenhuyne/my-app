@@ -1,11 +1,8 @@
-.App{
-  text-align: center;
-}
-
-.App {
+.app-container {
   min-height: 100vh;
-  background: #f5f7fa;
-  padding: 40px 20px;
+  background-color: #f5f7fa;
+  color: #212529;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .orchids-container {
@@ -21,12 +18,13 @@
 
 .orchids-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 25px;
 }
 
 .orchid-card {
-  background: white;
+  background-color: #ffffff;
+  color: #212529;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -56,7 +54,7 @@
 
 .orchid-info p {
   margin: 7px 0;
-  color: #555;
+  color: #555555;
 }
 
 .special {
@@ -64,19 +62,12 @@
   margin-top: 10px;
   padding: 6px 12px;
   border-radius: 20px;
-  background: #ffe0e6;
+  background-color: #ffe0e6;
   color: #d6336c;
   font-weight: bold;
 }
 
-.app {
-  min-height: 100vh;
-  background-color: #f8f9fa;
-  color: #212529;
-  transition: all 0.3s ease;
-}
-
-.dark-mode {
+.app-container.dark-mode {
   background-color: #212529;
   color: #f8f9fa;
 }
@@ -93,16 +84,28 @@
 .dark-mode .orchid-info p {
   color: #dee2e6;
 }
-.dark-mode .App {
-  background-color: #212529;
-  color: #f8f9fa;
-  min-height: 100vh;
+
+.dark-mode .text-muted {
+  color: #adb5bd !important;
 }
 
-.dark-mode .orchids-container {
-  background-color: #212529;
+@media (max-width: 992px) {
+  .orchids-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-.dark-mode .orchids-container h1 {
-  color: #f8f9fa;
+@media (max-width: 576px) {
+  .orchids-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .orchids-container h1 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .orchid-image {
+    height: 200px;
+  }
 }

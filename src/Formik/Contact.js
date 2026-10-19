@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -10,11 +9,16 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  FormControlLabel,
   FormHelperText,
-  Switch,
   Button
 } from '@mui/material';
+
+const topics = [
+  'Payment & billing',
+  'Order & delivery',
+  'Orchid care advice',
+  'Other'
+];
 
 function Contact() {
   const formik = useFormik({
@@ -22,9 +26,8 @@ function Contact() {
       name: '',
       email: '',
       phone: '',
-      program: 0,
-      message: '',
-      agree: false
+      topic: '',
+      message: ''
     },
 
     validationSchema: Yup.object({
@@ -43,16 +46,13 @@ function Contact() {
           'Phone must contain 10 or 11 digits.'
         ),
 
-      program: Yup.number()
-        .required('Please select a program.')
-        .moreThan(0, 'Please select a program.'),
+      topic: Yup.string()
+        .required('Please select a topic.')
+        .oneOf(topics, 'Please select a valid topic.'),
 
       message: Yup.string()
         .required('Message is required.')
-        .min(10, 'Message must have at least 10 characters.'),
-
-      agree: Yup.boolean()
-        .oneOf([true], 'You must agree to the terms.')
+        .min(10, 'Message must have at least 10 characters.')
     }),
 
     onSubmit: (values, { resetForm }) => {
@@ -118,43 +118,32 @@ function Contact() {
           }
         />
 
-        {/* Program of Study */}
+        {/* Topic */}
         <FormControl
           fullWidth
           margin="normal"
-          error={
-            formik.touched.program && Boolean(formik.errors.program)
-          }
+          error={formik.touched.topic && Boolean(formik.errors.topic)}
         >
-          <InputLabel id="program-label">
-            Program of Study
-          </InputLabel>
+          <InputLabel id="topic-label">Topic</InputLabel>
 
           <Select
-            labelId="program-label"
-            id="program"
-            name="program"
-            label="Program of Study"
-            value={formik.values.program}
+            labelId="topic-label"
+            id="topic"
+            name="topic"
+            label="Topic"
+            value={formik.values.topic}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           >
-            <MenuItem value={0}>
-              <em>Please select</em>
-            </MenuItem>
-
-            <MenuItem value={1}>Software Engineering</MenuItem>
-            <MenuItem value={2}>Information System</MenuItem>
-            <MenuItem value={3}>Information Assurance</MenuItem>
-            <MenuItem value={4}>Internet of Things</MenuItem>
-            <MenuItem value={5}>Artificial Intelligence</MenuItem>
-            <MenuItem value={6}>Digital Art & Design</MenuItem>
+            {topics.map((topic) => (
+              <MenuItem key={topic} value={topic}>
+                {topic}
+              </MenuItem>
+            ))}
           </Select>
 
-          {formik.touched.program && formik.errors.program && (
-            <FormHelperText>
-              {formik.errors.program}
-            </FormHelperText>
+          {formik.touched.topic && formik.errors.topic && (
+            <FormHelperText>{formik.errors.topic}</FormHelperText>
           )}
         </FormControl>
 
@@ -176,31 +165,6 @@ function Contact() {
             formik.touched.message ? formik.errors.message : ''
           }
         />
-
-        {/* Agree to terms */}
-        <FormControl
-          error={formik.touched.agree && Boolean(formik.errors.agree)}
-          component="fieldset"
-          sx={{ display: 'block', mt: 2 }}
-        >
-          <FormControlLabel
-            control={
-              <Switch
-                name="agree"
-                checked={formik.values.agree}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-              />
-            }
-            label="Agree to terms and conditions."
-          />
-
-          {formik.touched.agree && formik.errors.agree && (
-            <FormHelperText>
-              {formik.errors.agree}
-            </FormHelperText>
-          )}
-        </FormControl>
 
         {/* Submit */}
         <div style={{ marginTop: '20px' }}>
