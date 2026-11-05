@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/*import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
@@ -9,13 +9,8 @@ import Home from "./LAB5/Home";
 
 import Naturals from "./LAB5/Naturals";
 import Detail from "./LAB5/Details";
-import Contact from "./Formik/Contact";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-
-function App() {
-  const [darkMode, setDarkMode] = useState(false);
+import Contact from "./Formik/Contact";*/
+/*const [darkMode, setDarkMode] = useState(false);
 
   function toggleTheme() {
     setDarkMode((previousMode) => !previousMode);
@@ -27,26 +22,31 @@ function App() {
     return () => {
       document.body.classList.remove("dark-mode");
     };
-  }, [darkMode]);
+  }, [darkMode]);*/
 
+/*import "bootstrap/dist/css/bootstrap.min.css";
+import ProfileList from "./FetchAPI/profile";*/
+//import AxiosDemo from "./AxiosEx/AxiosDemo";
+//import ProfileList from "./FetchAPI/profile";
+
+import "./App.css";
+import { Link, Route, Routes } from "react-router-dom";
+import FetchPlayers from "./FetchAPI/FetchPlayers";
+import Add from "./FetchAPI/Add";
+
+export default function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <div className={`app-container ${darkMode ? "dark-mode" : ""}`}>
-          <AppNavbar darkMode={darkMode} toggleTheme={toggleTheme} />
-          <Container className="py-4">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/detail" element={<Detail />} />
-              <Route path="/naturals" element={<Naturals />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </Container>
-        </div>
-      </BrowserRouter>
-    </AuthProvider>
+    <>
+      <nav style={{ padding: 16, display: "flex", gap: 20 }}>
+        <Link to="/dashboard">Danh sách cầu thủ</Link>
+        <Link to="/add">Thêm cầu thủ</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<FetchPlayers />} />
+        <Route path="/dashboard" element={<FetchPlayers />} />
+        <Route path="/add" element={<Add />} />
+      </Routes>
+    </>
   );
 }
-
-export default App;
-

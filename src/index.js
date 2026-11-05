@@ -1,12 +1,11 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import AuthProvider from "./LAB1-2-3/AuthProvider";
 
-const root = createRoot(document.getElementById("root"));
-
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <AuthProvider>
+  <BrowserRouter>
     <App />
-  </AuthProvider>
+  </BrowserRouter>
 );
